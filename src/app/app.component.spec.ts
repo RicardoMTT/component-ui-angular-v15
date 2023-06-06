@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,7 +10,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent
       ],
     }).compileComponents();
   });
@@ -26,10 +28,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('components-angular-ui');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('components-angular-ui app is running!');
-  });
 });

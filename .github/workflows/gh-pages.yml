@@ -6,6 +6,23 @@ on:
     - master
 
 jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository to virtual machine
+        uses: actions/checkout@v2
+      - name: Use nodejs 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Setup
+        run: npm ci
+      - name: test
+        run : npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      
+
+
   deploy:
     runs-on: ubuntu-latest
     steps:
