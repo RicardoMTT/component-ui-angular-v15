@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: Clone repository to virtual machine
         uses: actions/checkout@v2
-      - name: Use nodejs 14.x
+      - name: Use nodejs 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Setup
         run: npm ci
       - name: test
