@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'components-angular-ui';
+  onSearch(searchTerm: string) {
+    // Realiza las acciones necesarias con el término de búsqueda
+    console.log('Search term:', searchTerm);
+  }
 }

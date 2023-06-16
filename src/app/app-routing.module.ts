@@ -12,6 +12,11 @@ const routes: Routes = [
       import('./carousel/carousel.module').then((m) => m.CarouselModule),
   },
   {
+    path: 'search',
+    loadChildren: () =>
+      import('./search/search.module').then((m) => m.SearchModule),
+  },
+  {
     path:'',
     pathMatch:'full',
     redirectTo:'/carousel'
